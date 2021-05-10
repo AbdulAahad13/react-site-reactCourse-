@@ -21,15 +21,15 @@ function Navbar() {
             setButton(true)
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         showButton()
-    },[]);
+    }, []);
     window.addEventListener('resize', showButton);
     return (
         <>
             <nav className='navbar'>
                 <div className='navbar-container'>
-                    <Link to='/' className='navbar-logo'>
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                         TRVL <i className='fab fa-typo3'></i>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
@@ -39,7 +39,7 @@ function Navbar() {
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
                         <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                        Home
+                            Home
                         </Link>
                     </li>
                     <li className='nav-item'>
